@@ -18,7 +18,7 @@ const app = express();
 
 // MongoDB connection
 const mongoose = require('mongoose');
-mongoose.connect("mongodb+srv://Ansh:Anshsingla12@cluster0.um0v8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect("mongodb+srv://Ansh:Anshsingla12@cluster0.um0v8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
     .then(() => console.log('MongoDB Connected'))
     .catch(err => console.log(err));
 

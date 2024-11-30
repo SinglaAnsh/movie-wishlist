@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
-const Movie = require('../models/movie');  // Example movie model
+const Movie = require('../models/Movie');  // Example movie model
 
 // Get all wishlist items
 router.get('/', (req, res) => {
