@@ -2,7 +2,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const GitHubStrategy = require('passport-github2').Strategy;
 const bcrypt = require('bcryptjs');
-const User = require('../models/user'); // Define your User model
+const User = require('../models/User'); // Define your User model
 
 passport.use(new LocalStrategy(User.authenticate()));
 
