@@ -7,6 +7,8 @@ const logger = require('morgan');
 const session = require('express-session');
 const passport = require('passport');
 const hbs = require('hbs');
+const usersRouter = require('./routes/users');
+
 
 // Models and Routes
 const User = require('./models/User');
