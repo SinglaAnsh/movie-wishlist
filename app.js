@@ -14,8 +14,7 @@ const authRouter = require('./routes/auth');
 
 // Models and Routes
 const User = require('./models/User');
-const authRoutes = require('./routes/auth');
-const wishlistRoutes = require('./routes/wishlist');
+const wishlistRouter = require('./routes/wishlist');
 const indexRouter = require('./routes/index');
 
 // App setup
