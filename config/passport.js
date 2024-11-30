@@ -1,14 +1,15 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const GitHubStrategy = require('passport-github2').Strategy;
-const User = require('../models/User'); // Define your User model
+const bcrypt = require('bcryptjs');
+const User = require('../models/user'); // Define your User model
 
 passport.use(new LocalStrategy(User.authenticate()));
 
 passport.use(new GitHubStrategy({
-ClientId: "Iv23liX5GAqpGwsTN7xh",
-ClientSecret: "7c8ca37e6c00fa07448d13a18b3f125e62cf329a",
-CallbackUrl: "http://localhost:3000/github/callback",
+    clientID: process.env.GITHUB_CLIENT_ID,
+    clientSecret: process.env.GITHUB_CLIENT_SECRET,
+    callbackURL: process.env.CALLBACK_URL
 
 }, async (accessToken, refreshToken, profile, done) => {
     try {
