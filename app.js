@@ -6,15 +6,26 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const session = require('express-session');
 const passport = require('passport');
+const mongoose = require('mongoose');
+const hbs = require('hbs');
 
+// Models and Routes
+const User = require('./models/User');
+const authRoutes = require('./routes/auth');
+const wishlistRoutes = require('./routes/wishlist');
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
-const authRouter = require('./routes/auth');
-const wishlistRouter = require('./routes/wishlist');
 
-require('./config/passport'); // Passport configuration
-
+// App setup
 const app = express();
+
+// Set the view engine to Handlebars (hbs)
+app.set('view engine', 'hbs');
+
+// Middleware setup
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(logger('dev'));
 
 // MongoDB connection
 const mongoose = require('mongoose');
