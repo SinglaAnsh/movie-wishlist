@@ -8,6 +8,8 @@ const session = require('express-session');
 const passport = require('passport');
 const hbs = require('hbs');
 const usersRouter = require('./routes/users');
+const authRouter = require('./routes/auth');
+
 
 
 // Models and Routes
